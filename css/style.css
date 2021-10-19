@@ -34059,6 +34059,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
   width: fit-content;
 }
 
+.speaker-card .speaker-role {
+  height: 75px;
+}
+
 #sponsors-carousel .carousel-inner .carousel-item .card {
   display: -webkit-box;
   display: -ms-flexbox;

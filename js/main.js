@@ -69,7 +69,7 @@ $(document).ready(function () {
                 let { avatar, bio, business, job, name, picture } = speakerData
                 return accum + `
                 <div class="col-lg-3 col-md-6 mx-md-auto mb-4">
-                    <div class="card card-profile mt-md-0 mt-5">
+                    <div class="card card-profile mt-md-0 mt-5 speaker-card">
                         <a href="javascript:;">
                             <div class="p-3">
                                 <img class="w-100 border-radius-md" src=${picture}>
@@ -77,7 +77,7 @@ $(document).ready(function () {
                         </a>
                         <div class="cAard-body blur justify-content-center text-center mt-n5 mx-4 mb-4 border-radius-md">
                             <h4 class="mb-0">${name}</h4>
-                            <p class="mb-0"><b>${job}</b></p>
+                            <p class="mb-0 speaker-role"><b>${job}</b></p>
                             <p class="mb-2">${business}</p>
                             <button type="button" class="btn bg-gradient-info" onclick="showSpeakerModal('${current}')">Bio</button>
                         </div>
