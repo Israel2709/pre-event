@@ -4,23 +4,29 @@ let speakersRef = database.ref("speakers")
 let sponsorsRef = database.ref("sponsors")
 let eventData;
 let speakersList;
+let sponsorsList;
 
 const getSpeakers = async () => {
     let result = await fetch("https://idc-latam-default-rtdb.firebaseio.com/speakers/.json")
     return await result.json()
 }
 
+const getSponsors = async () => {
+    let result = await fetch("https://idc-latam-default-rtdb.firebaseio.com/sponsors/.json")
+    return await result.json()
+}
+
 const showSpeakerModal = data => {
-    console.log( data )
-    console.log( speakersList )
-    console.log( speakersList[data])
-    let { name, picture, bio} = speakersList[data]
+    console.log(data)
+    console.log(speakersList)
+    console.log(speakersList[data])
+    let { name, picture, bio } = speakersList[data]
     $("#speaker-modal #title").text(name)
     $("#speaker-modal #bio").text(bio.es)
-    $("#speaker-modal #picture").attr("src",picture)
+    $("#speaker-modal #picture").attr("src", picture)
     $("#speaker-modal").modal("show")
 }
-$(document).ready( function() {
+$(document).ready(function () {
     eventRef.once('value').then(async snapshot => {
         console.log(snapshot.val())
         eventData = snapshot.val()
@@ -40,7 +46,9 @@ $(document).ready( function() {
             title
         } = snapshot.val()
         speakersList = await getSpeakers()
-        console.log( speakersList )
+        sponsorsList = await getSponsors()
+        console.log(speakersList)
+        console.log(sponsorsList)
         $("#page-header").css({ "background-image": `url(${heroImg})` })
         $("#title").text(title)
         $("#subtitle").text(subtitle)
@@ -48,7 +56,7 @@ $(document).ready( function() {
         $("#abstract").text(abstract)
         $("#agenda").text(agenda.title)
         $("#agenda-description").text(agenda.description)
-        speakers.forEach( (speakerSection, index) => {
+        speakers.forEach((speakerSection, index) => {
             $("#speakers-wrapper").append(`
                 <div className="col-12">
                     <h3 class="text-dark text-gradient w-fit-content">${speakerSection.section}</h3>
@@ -56,9 +64,9 @@ $(document).ready( function() {
                 <div id="speakers-${index}" class="row"></div>
             `)
             let sectionContent = speakerSection.speaker.reduce((accum, current, index) => {
-                console.log( speakersList[current] )
+                console.log(speakersList[current])
                 let speakerData = speakersList[current]
-                let { avatar, bio, business, jog, name, picture } = speakerData
+                let { avatar, bio, business, job, name, picture } = speakerData
                 return accum + `
                 <div class="col-lg-3 col-md-6 mx-md-auto mb-4">
                     <div class="card card-profile mt-md-0 mt-5">
@@ -69,13 +77,41 @@ $(document).ready( function() {
                         </a>
                         <div class="cAard-body blur justify-content-center text-center mt-n5 mx-4 mb-4 border-radius-md">
                             <h4 class="mb-0">${name}</h4>
-                            <p>${business}</p>
-                            <button type="button" class="btn bg-gradient-info" onclick="showSpeakerModal('${current}')">Info</button>
+                            <p class="mb-0"><b>${job}</b></p>
+                            <p class="mb-2">${business}</p>
+                            <button type="button" class="btn bg-gradient-info" onclick="showSpeakerModal('${current}')">Bio</button>
                         </div>
                     </div>
                 </div>`
-            },"")
+            }, "")
             $(`#speakers-${index}`).append(sectionContent)
+        })
+        sponsors.forEach((sponsor, index) => {
+            console.log(sponsor)
+            console.log(sponsorsList[sponsor.name])
+            let { ico, name, links, boilerplate } = sponsorsList[sponsor.name]
+            $("#sponsors-wrapper").append(`
+            <div class="col-md-3 mb-md-0 mb-7">
+                <div class="card sponsor-card">
+                    <div class="text-center mt-n5 z-index-1">
+                        <div class="position-relative">
+                            <div class="blur-shadow-avatar">
+                                <img class="avatar avatar-xxl shadow-lg" src=${ico}>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center pb-0">
+                        <h4 class="mb-0">${name}</h4>
+                        <p><a href="${links.web}" target="_blank">${links.web}</a> </p>
+                        <p class="mt-2 abstract">${boilerplate}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            `)
         })
     })
 })
+
+/*
+const sponsorcard = ""*/

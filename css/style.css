@@ -34033,6 +34033,26 @@ svg.leaflet-image-layer.leaflet-interactive path {
   transform: scale(1);
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .w-fit-content {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -34060,5 +34080,21 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 #sponsors-carousel .carousel-inner .carousel-item .card .card-body {
   padding-left: 1rem;
+}
+
+#sponsors-wrapper .sponsor-card .avatar {
+  z-index: 9999;
+  background-color: white;
+}
+
+#sponsors-wrapper .sponsor-card .abstract {
+  height: 160px;
+  overflow-y: scroll;
+}
+
+#sponsors-wrapper .sponsor-card .sponsor-link {
+  text-decoration: underline;
+  color: navy;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
