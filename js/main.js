@@ -3,6 +3,7 @@ let eventRef = database.ref("events/ciosummit")
 let speakersRef = database.ref("speakers")
 let sponsorsRef = database.ref("sponsors")
 let eventData;
+let speakersList;
 
 const getSpeakers = async () => {
     let result = await fetch("https://idc-latam-default-rtdb.firebaseio.com/speakers/.json")
@@ -11,6 +12,13 @@ const getSpeakers = async () => {
 
 const showSpeakerModal = data => {
     console.log( data )
+    console.log( speakersList )
+    console.log( speakersList[data])
+    let { name, picture, bio} = speakersList[data]
+    $("#speaker-modal #title").text(name)
+    $("#speaker-modal #bio").text(bio.es)
+    $("#speaker-modal #picture").attr("src",picture)
+    $("#speaker-modal").modal("show")
 }
 $(document).ready( function() {
     eventRef.once('value').then(async snapshot => {
@@ -31,7 +39,7 @@ $(document).ready( function() {
             subtitle,
             title
         } = snapshot.val()
-        let speakersList = await getSpeakers()
+        speakersList = await getSpeakers()
         console.log( speakersList )
         $("#page-header").css({ "background-image": `url(${heroImg})` })
         $("#title").text(title)
@@ -47,7 +55,7 @@ $(document).ready( function() {
                 </div>
                 <div id="speakers-${index}" class="row"></div>
             `)
-            let sectionContent = speakerSection.speaker.reduce((accum, current) => {
+            let sectionContent = speakerSection.speaker.reduce((accum, current, index) => {
                 console.log( speakersList[current] )
                 let speakerData = speakersList[current]
                 let { avatar, bio, business, jog, name, picture } = speakerData
@@ -62,7 +70,7 @@ $(document).ready( function() {
                         <div class="cAard-body blur justify-content-center text-center mt-n5 mx-4 mb-4 border-radius-md">
                             <h4 class="mb-0">${name}</h4>
                             <p>${business}</p>
-                            <button type="button" class="btn bg-gradient-info" onclick="showSpeakerModal(${speakerData})">Info</button>
+                            <button type="button" class="btn bg-gradient-info" onclick="showSpeakerModal('${current}')">Info</button>
                         </div>
                     </div>
                 </div>`
