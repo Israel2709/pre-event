@@ -43,7 +43,8 @@ $(document).ready(function () {
             speakers,
             sponsors,
             subtitle,
-            title
+            title,
+            ejes
         } = snapshot.val()
         speakersList = await getSpeakers()
         sponsorsList = await getSponsors()
@@ -53,7 +54,7 @@ $(document).ready(function () {
         $("#subtitle").text(subtitle)
         $("#slogan").text(slogan)
         $("#abstract").text(abstract)
-        $("#agenda").text(agenda.title)
+        $("#agenda-title").text(agenda.title)
         $("#agenda-description").text(agenda.description)
         speakers.forEach((speakerSection, index) => {
             $("#speakers-wrapper").append(`
@@ -110,6 +111,33 @@ $(document).ready(function () {
                     </div>
                 </div>
             </div>
+            `)
+        })
+        ejes.ejes.forEach( eje => {
+            $("#ejes-wrapper").append(`
+            <div class="card card-plain card-blog mb-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card-image position-relative border-radius-lg">
+                                <div class="blur-shadow-image">
+                                    <img class="img border-radius-lg"
+                                        src=${eje.cover}>
+                                </div>
+                                <div class="colored-shadow"
+                                    style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/macbook.jpg&quot;);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 my-auto ms-md-3 mt-md-auto mt-4">
+                            <h3>
+                                <a href="javascript:;" class="text-dark font-weight-normal">${eje.title}</a>
+                            </h3>
+                            <p>
+                                ${eje.description}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             `)
         })
     })

@@ -44,6 +44,10 @@
     width:fit-content
 }
 
+.custom-shadow{
+    box-shadow: 0 20px 27px 0 rgba(0,0,0,.05),0 -20px 27px 0 rgba(0,0,0,.05)
+}
+
 .speaker-card{
     .speaker-role{
         font-size: 14px;
