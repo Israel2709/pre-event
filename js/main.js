@@ -39,6 +39,8 @@ $(document).ready(function () {
             heroImg,
             heroImgResponsive,
             name,
+            sponsorsTitle,
+            sponsorsDescription,
             slogan,
             speakers,
             sponsors,
@@ -56,6 +58,8 @@ $(document).ready(function () {
         $("#abstract").text(abstract)
         $("#agenda-title").text(agenda.title)
         $("#agenda-description").text(agenda.description)
+        $("#sponsors #sponsors-title").text(sponsorsTitle || "")
+        $("#sponsors #sponsors-description").text(sponsorsDescription || "")
         speakers.forEach((speakerSection, index) => {
             $("#speakers-wrapper").append(`
                 <div class="col-12">
