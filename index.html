@@ -31,9 +31,52 @@
             </div>
         </div>
     </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark z-index-3 py-3">
+  <div class="container">
+    <a class="navbar-brand text-white" href="https://demos.creative-tim.com/soft-ui-design-system-pro/presentation.html" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+      
+    </a>
+    <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon mt-2">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
+      <ul class="navbar-nav navbar-nav-hover mx-auto">
+        <li class="nav-item mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" href="#agenda" role="button">
+            Agenda
+            <img src="img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1">
+          </a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button"  href="#speakers">
+            Speakers
+            <img src="img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1">
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button"  href="#sponsors">
+            Sponsors
+            <img src="img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1">
+          </a>
+        </li>
+
+        <li class="nav-item dropdown dropdown-hover mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button"  href="#contact">
+            Contacto
+            <img src="img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <header class="mb-5">
-        <div id="page-header" class="page-header min-vh-100 d-flex justify-content-center flex-column"
-            style="background-image: url(img/pre-event/master-graphic.jfif);">
+        <div id="page-header" class="page-header min-vh-50 d-flex justify-content-center flex-column">
             <h1 id="title" class="text-white display-1"></h1>
             <h3 id="subtitle" class="text-white display-4"></h3>
         </div>
@@ -46,7 +89,7 @@
             </div>
         </div>
     </header>
-    <div class="container">
+    <div class="container" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="-100" class="scrollspy-example" tabindex="0">
         <div class="row mb-5">
             <div class="col-12">
                 <h2 id="slogan" class="text-dark text-gradient text-center w-fit-content mx-auto">Event title</h2>
@@ -68,7 +111,7 @@
                                     days to request a refund.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4 my-auto">
+                        <div class="col-lg-4 my-auto" id="agenda">
                             <div class="card-body text-center">
                                 <button type="button" class="btn bg-gradient-info btn-lg mt-2"
                                     onclick="window.open('https://firebasestorage.googleapis.com/v0/b/idc-latam.appspot.com/o/events%2Fbusiness%2Fciosummit%2FPPT%2FAGENDA_IDC_CIO_SUMMIT.pdf?alt=media&token=4faab719-30ec-4db1-8d66-0e532eaac725')">Descargar
@@ -79,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-5">
+        <div id="speakers" class="row mb-5">
             <div class="col-12">
                 <h2 class="text-dark text-gradient w-fit-content mx-auto">Speakers</h2>
             </div>
@@ -110,7 +153,7 @@
                     <img src="img/shapes/waves-white.svg"
                         class="position-absolute opacity-6 h-100 top-0 d-md-block d-none" alt="">
                     <div class="container pt-6 pb-5 position-relative z-index-3">
-                        <div class="row">
+                        <div class="row" id="sponsors">
                             <div class="col-md-6 mx-auto text-center">
                                 <span class="badge badge-white text-dark mb-2">Sponsors</span>
                                 <h2 class="text-white mb-3" id="sponsors-title"></h2>
@@ -141,7 +184,7 @@
 
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" id="contact">
         <div class="row mb-5">
             <div class="col-12">
                 <section class="py-10 bg-gradient-dark position-relative overflow-hidden">

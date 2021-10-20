@@ -49,7 +49,6 @@ $(document).ready(function () {
         sponsorsList = await getSponsors()
         console.log(speakersList)
         console.log(sponsorsList)
-        $("#page-header").css({ "background-image": `url(${heroImg})` })
         $("#title").text(title)
         $("#subtitle").text(subtitle)
         $("#slogan").text(slogan)

@@ -34053,6 +34053,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
   background: #555;
 }
 
+#page-header {
+  background-image: url("../img/pre-event/mg-responsive.svg");
+  background-position: center top;
+}
+
 .w-fit-content {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -34100,5 +34105,12 @@ svg.leaflet-image-layer.leaflet-interactive path {
   text-decoration: underline;
   color: navy;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  #page-header {
+    background-image: url("../img/pre-event/mg-desktop.svg");
+    background-position: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
