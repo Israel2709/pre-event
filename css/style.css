@@ -34071,7 +34071,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 .speaker-card .speaker-role {
   font-size: 14px;
-  height: 90px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #sponsors-wrapper .sponsor-card .avatar {

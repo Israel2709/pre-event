@@ -63,10 +63,10 @@ $(document).ready(function () {
         speakers.forEach((speakerSection, index) => {
             $("#speakers-wrapper").append(`
                 <div class="col-12">
-                    <h3 class="text-dark text-gradient w-fit-content">${speakerSection.section}</h3>
+                    <h3 class="text-dark text-gradient w-fit-content mb-3">${speakerSection.section}</h3>
                 </div>
                 <div class="col-12">
-                <div id="speakers-${index}" class="row"></div>
+                <div id="speakers-${index}" class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4"></div>
                 </div>
                 
             `)
@@ -75,13 +75,11 @@ $(document).ready(function () {
                 let speakerData = speakersList[current]
                 let { avatar, bio, business, job, name, picture } = speakerData
                 return accum + `
-                <div class="col-12 col-lg-2 col-md-4 mx-md-auto mb-4">
-                    <div class="card card-profile mt-md-0 mt-5 speaker-card h-100">
-                        <a href="javascript:;">
-                            <div class="p-3">
-                                <img class="w-100 border-radius-md" src=${picture}>
-                            </div>
-                        </a>
+                <div class="col">
+                    <div class="card card-profile speaker-card h-100 mb-3">
+                        <div class="p-3">
+                            <img class="w-100 border-radius-md" src=${picture}>
+                        </div>
                         <div class="cAard-body blur justify-content-center text-center mt-n5 mx-4 border-radius-md d-flex flex-column h-100">
                             <h4 class="mb-0">${name}</h4>
                             <p class="mb-0 speaker-role"><b>${job}</b></p>
@@ -89,7 +87,9 @@ $(document).ready(function () {
                             <button type="button" class="btn bg-gradient-info" style="margin-top:auto; width:100%" onclick="showSpeakerModal('${current}')">Bio</button>
                         </div>
                     </div>
-                </div>`
+                </div>
+                
+            `
             }, "")
             $(`#speakers-${index}`).append(sectionContent)
         })
