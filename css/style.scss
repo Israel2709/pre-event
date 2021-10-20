@@ -46,26 +46,8 @@
 
 .speaker-card{
     .speaker-role{
-        height:75px;
-    }
-}
-
-#sponsors-carousel{
-    .carousel-inner{
-        .carousel-item{
-            .card{
-                display: flex;
-                flex-wrap:nowrap;
-                flex-direction: row;
-                justify-content: space-between;
-                .card-image{
-                    width:calc( 50% - 1rem )
-                }
-                .card-body{
-                    padding-left: 1rem;
-                }
-            }
-        }
+        font-size: 14px;
+        height:90px;
     }
 }
 

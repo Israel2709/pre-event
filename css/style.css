@@ -34065,30 +34065,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 
 .speaker-card .speaker-role {
-  height: 75px;
-}
-
-#sponsors-carousel .carousel-inner .carousel-item .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-#sponsors-carousel .carousel-inner .carousel-item .card .card-image {
-  width: calc( 50% - 1rem);
-}
-
-#sponsors-carousel .carousel-inner .carousel-item .card .card-body {
-  padding-left: 1rem;
+  font-size: 14px;
+  height: 90px;
 }
 
 #sponsors-wrapper .sponsor-card .avatar {

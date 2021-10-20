@@ -57,28 +57,31 @@ $(document).ready(function () {
         $("#agenda-description").text(agenda.description)
         speakers.forEach((speakerSection, index) => {
             $("#speakers-wrapper").append(`
-                <div className="col-12">
+                <div class="col-12">
                     <h3 class="text-dark text-gradient w-fit-content">${speakerSection.section}</h3>
                 </div>
+                <div class="col-12">
                 <div id="speakers-${index}" class="row"></div>
+                </div>
+                
             `)
             let sectionContent = speakerSection.speaker.reduce((accum, current, index) => {
                 console.log(speakersList[current])
                 let speakerData = speakersList[current]
                 let { avatar, bio, business, job, name, picture } = speakerData
                 return accum + `
-                <div class="col-lg-3 col-md-6 mx-md-auto mb-4">
-                    <div class="card card-profile mt-md-0 mt-5 speaker-card">
+                <div class="col-12 col-lg-2 col-md-4 mx-md-auto mb-4">
+                    <div class="card card-profile mt-md-0 mt-5 speaker-card h-100">
                         <a href="javascript:;">
                             <div class="p-3">
                                 <img class="w-100 border-radius-md" src=${picture}>
                             </div>
                         </a>
-                        <div class="cAard-body blur justify-content-center text-center mt-n5 mx-4 mb-4 border-radius-md">
+                        <div class="cAard-body blur justify-content-center text-center mt-n5 mx-4 border-radius-md d-flex flex-column h-100">
                             <h4 class="mb-0">${name}</h4>
                             <p class="mb-0 speaker-role"><b>${job}</b></p>
                             <p class="mb-2">${business}</p>
-                            <button type="button" class="btn bg-gradient-info" onclick="showSpeakerModal('${current}')">Bio</button>
+                            <button type="button" class="btn bg-gradient-info" style="margin-top:auto; width:100%" onclick="showSpeakerModal('${current}')">Bio</button>
                         </div>
                     </div>
                 </div>`
