@@ -112,7 +112,7 @@ $(document).ready(function () {
                     </div>
                     <div class="card-body text-center pb-0">
                         <h4 class="mb-0">${name}</h4>
-                        <p><a href="${links.web}" target="_blank">${links.web}</a> </p>
+                        <p><a href="https://${links.web}" target="_blank">${links.web}</a> </p>
                         <p class="mt-2 abstract">${boilerplate}
                         </p>
                     </div>
