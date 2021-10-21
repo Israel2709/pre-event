@@ -84,9 +84,8 @@
         </div>
     </nav>
     <header class="mb-5">
-        <div id="page-header" class="page-header min-vh-50 d-flex justify-content-center flex-column">
-            <h1 id="title" class="text-white display-1"></h1>
-            <h3 id="subtitle" class="text-white display-4"></h3>
+        <div id="page-header" class="page-header d-flex justify-content-center flex-column">
+            <img class="w-100" src="" alt="" id="hero-img">
         </div>
         <div class="relative" style="height: 36px;overflow: hidden;margin-top: -36px; z-index:2">
             <div class="w-full absolute bottom-0 start-0 end-0"
@@ -99,6 +98,13 @@
     </header>
     <div class="container" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="-100"
         class="scrollspy-example" tabindex="0">
+        <div class="row mb-5">
+            <div class="col-12 d-flex justify-content-center">
+                <a href="" id="header-cta" target="_blank">
+                    <button type="button" class="btn bg-gradient-info">Info</button>
+                </a>
+            </div>
+        </div>
         <div class="row mb-5">
             <div class="col-12">
                 <h2 id="slogan" class="text-dark text-gradient text-center w-fit-content mx-auto">Event title</h2>
@@ -141,7 +147,7 @@
 
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid px-0">
         <div class="row mb-5">
             <div class="col-12">
                 <section class="py-5 bg-gradient-dark position-relative overflow-hidden">
@@ -167,12 +173,12 @@
                     <div class="container pt-6 pb-5 position-relative z-index-3">
                         <div class="row" id="sponsors">
                             <div class="col-md-6 mx-auto text-center">
-                                <span class="badge badge-white text-dark mb-2">Sponsors</span>
+                                <span class="badge badge-white text-dark mb-2">Agradecemos a</span>
                                 <h2 class="text-white mb-3" id="sponsors-title"></h2>
                                 <h5 class="text-white font-weight-light" id="sponsors-description"></h5>
                             </div>
                         </div>
-                        <div id="sponsors-wrapper" class="row mt-8">
+                        <div id="sponsors-wrapper" class="row my-6">
 
                         </div>
                     </div>
@@ -197,19 +203,15 @@
     </div>
     <div class="container">
         <div class="row" id="ejes">
-            <!--div class="col-12">
-                <h2 id="title" class="text-dark text-gradient text-center w-fit-content mx-auto">Event title</h2>
-                <p class="lead text-center">Event Abstract: Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit.
-                    Ea, eos necessitatibus. Debitis nisi inventore harum porro ipsam blanditiis. Nostrum, perspiciatis!
-                    Commodi, error cupiditate? Laborum, molestias. Quisquam tempora laudantium quia nam!</p>
-            </div-->
+            <div class="col-12 d-flex justify-content-center">
+                <img class="cover mb-4 w-100 w-md-50 pb-5" src="" alt="">
+            </div>
             <div class="col-12" id="ejes-wrapper">
-                
+
             </div>
         </div>
     </div>
-    <div class="container-fluid" id="contact">
+    <div class="container-fluid px-0" id="contact">
         <div class="row mb-5">
             <div class="col-12">
                 <section class="py-10 bg-gradient-dark position-relative overflow-hidden">
@@ -235,34 +237,10 @@
                     <div class="container position-relative z-index-1">
                         <div class="row">
                             <div class="col-lg-6 col-md-12 d-flex justify-content-center flex-column">
-                                <h2 class="text-white">Contáctanos</h2>
-                                <p class="lead pe-5 text-white opacity-8 z-index-1">¿Necesitas más información?</p>
-                                <p class="mt-4 text-white opacity-8 z-index-1">730 Dyonisie Wolf <br> Bucharest, RO
-                                    010458</p>
-                                <div class="d-flex p-2 text-white opacity-8">
-                                    <div>
-                                        <i class="fas fa-phone text-sm"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <span class="text-sm">(+40) 772 100 200</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-2 text-white opacity-8">
-                                    <div>
-                                        <i class="fas fa-envelope text-sm"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <span class="text-sm">hello@creative-tim.com</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-2 text-white opacity-8">
-                                    <div>
-                                        <i class="fas fa-ticket-alt text-sm"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <span class="text-sm">Open Support Ticket</span>
-                                    </div>
-                                </div>
+                                <h2 class="text-white title">Contáctanos</h2>
+                                <p class="lead pe-5 text-white opacity-8 z-index-1 description">¿Necesitas más
+                                    información?</p>
+                                <div class="contact-wrapper d-flex justify-content-between flex-wrap"></div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="card mt-5 mt-lg-0">
@@ -272,65 +250,34 @@
                                                 <div class="col-md-6">
                                                     <label>Nombre:</label>
                                                     <div class="input-group mb-4">
-                                                        <input 
-                                                            class="form-control"
-                                                            placeholder="Ej. Jhon"
-                                                            aria-label="Nombre..."
-                                                            type="text"
-                                                            name="name"
-                                                        >
+                                                        <input class="form-control" placeholder="Ej. Jhon"
+                                                            aria-label="Nombre..." type="text" name="name">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 ps-2">
                                                     <label>Apellidos:</label>
                                                     <div class="input-group mb-4">
-                                                        <input 
-                                                            type="text"
-                                                            class="form-control"
-                                                            placeholder="Ej. Doe"
-                                                            aria-label="Apellido.."
-                                                            name="lastname"
-                                                        >
+                                                        <input type="text" class="form-control" placeholder="Ej. Doe"
+                                                            aria-label="Apellido.." name="lastname">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div>
                                                 <label>Email</label>
                                                 <div class="input-group">
-                                                    <input 
-                                                        type="email" 
-                                                        class="form-control"
-                                                        placeholder="tunombre@tuempresa.com"
-                                                        name="email"
-                                                    >
+                                                    <input type="email" class="form-control"
+                                                        placeholder="tunombre@tuempresa.com" name="email">
                                                 </div>
                                             </div>
                                             <div class="form-group mt-4">
                                                 <label>Tu mensaje:</label>
-                                                <textarea 
-                                                    name="message" 
-                                                    class="form-control" 
-                                                    placeholder="Tu mensaje aquí"
-                                                    id="message" 
-                                                    rows="3"
-                                                ></textarea>
+                                                <textarea name="message" class="form-control"
+                                                    placeholder="Tu mensaje aquí" id="message" rows="3"></textarea>
                                             </div>
                                             <div class="row">
-                                                <!--div class="col-md-8">
-                                                    <div class="form-check form-switch mb-2">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="flexSwitchCheckDefault" checked="">
-                                                        <label class="form-check-label" for="flexSwitchCheckDefault">I
-                                                            agree to the <a href="javascript:;"
-                                                                class="text-dark text-underline">Terms and
-                                                                Conditions</a>.</label>
-                                                    </div>
-                                                </div-->
                                                 <div class="col-md-12">
-                                                    <button 
-                                                        type="submit"
-                                                        class="btn bg-gradient-info mt-3"
-                                                    >Enviar</button>
+                                                    <button type="submit"
+                                                        class="btn bg-gradient-info mt-3">Enviar</button>
                                                 </div>
                                             </div>
                                         </div>

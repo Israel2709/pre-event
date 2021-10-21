@@ -38,6 +38,7 @@ $(document).ready(function () {
             hasSlider,
             heroImg,
             heroImgResponsive,
+            headerCta,
             name,
             sponsorsTitle,
             sponsorsDescription,
@@ -52,6 +53,8 @@ $(document).ready(function () {
         sponsorsList = await getSponsors()
         console.log(speakersList)
         console.log(sponsorsList)
+        $("#hero-img").attr("src", heroImg)
+        $("#header-cta").attr("href", headerCta.link).find("button").text(headerCta.label)
         $("#title").text(title)
         $("#subtitle").text(subtitle)
         $("#slogan").text(slogan)
@@ -66,7 +69,7 @@ $(document).ready(function () {
                     <h3 class="text-dark text-gradient w-fit-content mb-3">${speakerSection.section}</h3>
                 </div>
                 <div class="col-12">
-                <div id="speakers-${index}" class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4"></div>
+                <div id="speakers-${index}" class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 px-md-8"></div>
                 </div>
                 
             `)
@@ -117,6 +120,7 @@ $(document).ready(function () {
             </div>
             `)
         })
+        $("#ejes .cover").attr("src", ejes.cover)
         ejes.ejes.forEach( eje => {
             $("#ejes-wrapper").append(`
             <div class="card card-plain card-blog mb-3">
@@ -139,6 +143,23 @@ $(document).ready(function () {
                             <p>
                                 ${eje.description}
                             </p>
+                        </div>
+                    </div>
+                </div>
+            `)
+        })
+        $("#contact .title").text(about.title)
+        $("#contact .description").text(about.description)
+        about.contactos.forEach( contacto => {
+            $(".contact-wrapper").append(`
+                <div class="contact-block w-100 w-md-50">
+                    <p class="mt-4 text-white opacity-8 z-index-1">${contacto.name} <br> ${contacto.job}</p>
+                    <div class="d-flex text-white opacity-8">
+                        <div>
+                            <i class="fas fa-envelope text-sm"></i>
+                        </div>
+                        <div class="ps-3">
+                            <span class="text-sm text-white"><a href="mailto:${contacto.mail}" class="text-white">${contacto.mail}</a></span>
                         </div>
                     </div>
                 </div>
