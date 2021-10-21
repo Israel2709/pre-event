@@ -132,7 +132,7 @@ $(document).ready(function () {
                                         src=${eje.cover}>
                                 </div>
                                 <div class="colored-shadow"
-                                    style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/macbook.jpg&quot;);">
+                                    style="background-image: url(${eje.cover});">
                                 </div>
                             </div>
                         </div>
