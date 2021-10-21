@@ -26,6 +26,12 @@ const showSpeakerModal = data => {
     $("#speaker-modal #picture").attr("src", picture)
     $("#speaker-modal").modal("show")
 }
+
+const openAgenda = event => {
+    console.log( event.target )
+    console.log( event.target.dataset)
+    window.open(event.target.dataset.documentUrl)
+}
 $(document).ready(function () {
     eventRef.once('value').then(async snapshot => {
         console.log(snapshot.val())
@@ -44,6 +50,7 @@ $(document).ready(function () {
             sponsorsDescription,
             slogan,
             speakers,
+            speakersTitle,
             sponsors,
             subtitle,
             title,
@@ -60,6 +67,8 @@ $(document).ready(function () {
         $("#slogan").text(slogan)
         $("#abstract").text(abstract)
         $("#agenda-title").text(agenda.title)
+        $("#btn-agenda").attr("data-document-url",agenda.document)
+        $("#speakers-title").text(speakersTitle)
         $("#agenda-description").text(agenda.description)
         $("#sponsors #sponsors-title").text(sponsorsTitle || "")
         $("#sponsors #sponsors-description").text(sponsorsDescription || "")
@@ -125,7 +134,7 @@ $(document).ready(function () {
             $("#ejes-wrapper").append(`
             <div class="card card-plain card-blog mb-3">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3 d-flex flex-column justify-content-center">
                             <div class="card-image position-relative border-radius-lg">
                                 <div class="blur-shadow-image">
                                     <img class="img border-radius-lg"
@@ -136,7 +145,7 @@ $(document).ready(function () {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-7 my-auto ms-md-3 mt-md-auto mt-4">
+                        <div class="col-md-8 my-auto ms-md-3 mt-md-auto mt-4">
                             <h3>
                                 <a href="javascript:;" class="text-dark font-weight-normal">${eje.title}</a>
                             </h3>

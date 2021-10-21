@@ -10,7 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
-    <title>Pre Event</title>
+    <title>IDC CIO SUMMIT</title>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
                 <ul class="navbar-nav navbar-nav-hover mx-auto">
                     <li class="nav-item mx-2">
-                        <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                        <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center px-5 py-4 fs-4"
                             href="#agenda" role="button">
                             Agenda
                             <img src="img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1">
@@ -107,11 +107,8 @@
         </div>
         <div class="row mb-5">
             <div class="col-12">
-                <h2 id="slogan" class="text-dark text-gradient text-center w-fit-content mx-auto">Event title</h2>
-                <p id="abstract" class="lead text-center">Event Abstract: Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit.
-                    Ea, eos necessitatibus. Debitis nisi inventore harum porro ipsam blanditiis. Nostrum, perspiciatis!
-                    Commodi, error cupiditate? Laborum, molestias. Quisquam tempora laudantium quia nam!</p>
+                <h2 id="slogan" class="text-dark text-gradient text-center w-fit-content mx-auto"></h2>
+                <p id="abstract" class="lead text-center"></p>
             </div>
         </div>
         <div class="row mb-5" id="agenda">
@@ -120,16 +117,14 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="card-body">
-                                <h3 id="agenda-title" class="text-gradient text-info">Lifetime Membership</h3>
-                                <p id="agenda-description">You have Free Unlimited Updates and Premium Support on each
-                                    package. You also have 30
-                                    days to request a refund.</p>
+                                <h3 id="agenda-title" class="text-gradient text-info"></h3>
+                                <p id="agenda-description"></p>
                             </div>
                         </div>
                         <div class="col-lg-4 my-auto">
                             <div class="card-body text-center">
-                                <button type="button" class="btn bg-gradient-info btn-lg mt-2"
-                                    onclick="window.open('https://firebasestorage.googleapis.com/v0/b/idc-latam.appspot.com/o/events%2Fbusiness%2Fciosummit%2FPPT%2FAGENDA_IDC_CIO_SUMMIT.pdf?alt=media&token=4faab719-30ec-4db1-8d66-0e532eaac725')">Descargar
+                                <button id="btn-agenda" type="button" class="btn bg-gradient-info btn-lg mt-2"
+                                    onclick="openAgenda(event)">Descargar
                                     la agenda</button>
                             </div>
                         </div>
@@ -139,7 +134,7 @@
         </div>
         <div id="speakers" class="row mb-5">
             <div class="col-12">
-                <h2 class="text-dark text-gradient w-fit-content mx-auto">Nuestros patrocinadores</h2>
+                <h2 id="speakers-title" class="text-dark text-gradient w-fit-content mx-auto"></h2>
             </div>
             <div class="col-12">
                 <div id="speakers-wrapper" class="row"></div>
