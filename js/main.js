@@ -28,8 +28,8 @@ const showSpeakerModal = data => {
 }
 
 const openAgenda = event => {
-    console.log( event.target )
-    console.log( event.target.dataset)
+    console.log(event.target)
+    console.log(event.target.dataset)
     window.open(event.target.dataset.documentUrl)
 }
 $(document).ready(function () {
@@ -60,14 +60,15 @@ $(document).ready(function () {
         sponsorsList = await getSponsors()
         console.log(speakersList)
         console.log(sponsorsList)
-        $("#hero-img").attr("src", heroImg)
+        console.log( $(window).width())
+        $(window).width() < 768 ? $("#hero-img").attr("src", heroImgResponsive) : $("#hero-img").attr("src", heroImg)
         $("#header-cta").attr("href", headerCta.link).find("button").text(headerCta.label)
         $("#title").text(title)
         $("#subtitle").text(subtitle)
         $("#slogan").text(slogan)
         $("#abstract").text(abstract)
         $("#agenda-title").text(agenda.title)
-        $("#btn-agenda").attr("data-document-url",agenda.document)
+        $("#btn-agenda").attr("data-document-url", agenda.document)
         $("#speakers-title").text(speakersTitle)
         $("#agenda-description").text(agenda.description)
         $("#sponsors #sponsors-title").text(sponsorsTitle || "")
@@ -130,39 +131,34 @@ $(document).ready(function () {
             `)
         })
         $("#ejes .cover").attr("src", ejes.cover)
-        ejes.ejes.forEach( eje => {
+        ejes.ejes.forEach(eje => {
             $("#ejes-wrapper").append(`
-            <div class="card card-plain card-blog mb-3">
-                    <div class="row">
-                        <div class="col-md-3 d-flex flex-column justify-content-center">
-                            <div class="card-image position-relative border-radius-lg">
-                                <div class="blur-shadow-image">
-                                    <img class="img border-radius-lg"
-                                        src=${eje.cover}>
-                                </div>
-                                <div class="colored-shadow"
-                                    style="background-image: url(${eje.cover});">
+                <div class="col">
+                    <div class="card card-plain card-blog mb-3">
+                        <div class="row">
+                            <div class="card card-plain text-center">
+                                    <img class="mx-auto shadow" src=${eje.cover}>
+
+                                <div class="card-body">
+                                    <h4 class="card-title">${eje.title}</h4>
+                                    <p class="card-description">
+                                    ${eje.description}
+                                    </p>
+                                    <h6 class="category text-info text-gradient"><a href=${eje.link} target="blank>Consultar IDC e-Book</a></h6>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-8 my-auto ms-md-3 mt-md-auto mt-4">
-                            <h3>
-                                <a href="javascript:;" class="text-dark font-weight-normal">${eje.title}</a>
-                            </h3>
-                            <p>
-                                ${eje.description}
-                            </p>
                         </div>
                     </div>
                 </div>
             `)
         })
         $("#contact .title").text(about.title)
-        $("#contact .description").text(about.description)
-        about.contactos.forEach( contacto => {
+        $("#contact .description").html(about.description)
+        about.contactos.forEach(contacto => {
             $(".contact-wrapper").append(`
-                <div class="contact-block w-100 w-md-50">
-                    <p class="mt-4 text-white opacity-8 z-index-1">${contacto.name} <br> ${contacto.job}</p>
+                <div class="contact-block w-100 w-md-50 mt-2">
+                    <img src=${contacto.pictue || 'https://www.erwinlist.com/html/wp-content/uploads/2020/02/29-5098-pp_gallery/LinkedIn-Sample-Photo-001(pp_w768_h768).jpg'} />
+                    <p class="text-white opacity-8 z-index-1">${contacto.name} <br> ${contacto.job}</p>
                     <div class="d-flex text-white opacity-8">
                         <div>
                             <i class="fas fa-envelope text-sm"></i>

@@ -34092,6 +34092,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
   cursor: pointer;
 }
 
+.contact-wrapper .contact-block img {
+  width: 50px;
+  border-radius: 100%;
+}
+
 @media only screen and (min-width: 768px) {
   #page-header {
     background-image: url("../img/pre-event/mg-desktop.svg");
