@@ -141,9 +141,6 @@ $(document).ready(function () {
 
                                 <div class="card-body">
                                     <h4 class="card-title">${eje.title}</h4>
-                                    <p class="card-description">
-                                    ${eje.description}
-                                    </p>
                                     <h6 class="category text-info text-gradient"><a href=${eje.link} target="blank>Consultar IDC e-Book</a></h6>
                                 </div>
                             </div>
@@ -157,7 +154,7 @@ $(document).ready(function () {
         about.contactos.forEach(contacto => {
             $(".contact-wrapper").append(`
                 <div class="contact-block w-100 w-md-50 mt-2">
-                    <img src=${contacto.pictue || 'https://www.erwinlist.com/html/wp-content/uploads/2020/02/29-5098-pp_gallery/LinkedIn-Sample-Photo-001(pp_w768_h768).jpg'} />
+                    <img src=${contacto.picture || 'https://www.erwinlist.com/html/wp-content/uploads/2020/02/29-5098-pp_gallery/LinkedIn-Sample-Photo-001(pp_w768_h768).jpg'} />
                     <p class="text-white opacity-8 z-index-1">${contacto.name} <br> ${contacto.job}</p>
                     <div class="d-flex text-white opacity-8">
                         <div>
